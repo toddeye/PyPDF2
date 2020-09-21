@@ -1125,7 +1125,7 @@ class PdfFileReader(object):
         ``warnings.py`` module with a custom implementation (defaults to
         ``True``).
     """
-    def __init__(self, stream, strict=True, warndest = None, overwriteWarnings = True):
+    def __init__(self, stream, strict=False, warndest = None, overwriteWarnings = True):
         if overwriteWarnings:
             # have to dynamically override the default showwarning since there are no
             # public methods that specify the 'file' parameter

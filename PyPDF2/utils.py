@@ -75,16 +75,11 @@ def readUntilWhitespace(stream, maxchars=None):
     Reads non-whitespace characters and returns them.
     Stops upon encountering whitespace or when maxchars is reached.
     """
-    txt = b""
+    txt = b_("")
     while True:
         tok = stream.read(1)
-        if txt and tok.isspace() or not tok:
+        if tok.isspace() or not tok:
             break
-        # must be int
-        try:
-            int(tok)
-        except ValueError:
-            continue
         txt += tok
         if len(txt) == maxchars:
             break
